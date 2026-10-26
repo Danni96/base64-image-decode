@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4F46E5" />
+      <stop offset="100%" stop-color="#06B6D4" />
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#818CF8" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#090D16" flood-opacity="0.45" />
+    </filter>
+  </defs>
+
+  <!-- Main Rounded Background -->
+  <rect x="16" y="16" width="224" height="224" rx="48" fill="url(#bgGrad)" />
+
+  <!-- Inner Image Frame -->
+  <rect x="40" y="44" width="160" height="140" rx="20" fill="url(#cardGrad)" stroke="#E0E7FF" stroke-width="4" stroke-opacity="0.25" filter="url(#shadow)" />
+
+  <!-- Sun in Image Frame -->
+  <circle cx="80" cy="84" r="14" fill="#38BDF8" />
+
+  <!-- Mountains in Image Frame -->
+  <path d="M48 168 L94 114 L132 152 L156 126 L192 168 Z" fill="url(#accentGrad)" opacity="0.9" />
+
+  <!-- B64 Badge Top-Right -->
+  <rect x="132" y="32" width="84" height="38" rx="12" fill="#0F172A" stroke="#06B6D4" stroke-width="3" filter="url(#shadow)" />
+  <text x="174" y="57" font-family="Consolas, 'Courier New', monospace" font-size="22" font-weight="bold" fill="#38BDF8" text-anchor="middle" letter-spacing="1">B64</text>
+
+  <!-- Magnifying Glass / Preview Lens -->
+  <g filter="url(#shadow)">
+    <line x1="188" y1="188" x2="220" y2="220" stroke="#E0E7FF" stroke-width="14" stroke-linecap="round" />
+    <line x1="188" y1="188" x2="220" y2="220" stroke="#4F46E5" stroke-width="8" stroke-linecap="round" />
+    <circle cx="156" cy="156" r="42" fill="#0F172A" fill-opacity="0.85" stroke="#06B6D4" stroke-width="8" />
+    <!-- Binary / Code inside Lens -->
+    <text x="156" y="152" font-family="Consolas, 'Courier New', monospace" font-size="15" font-weight="bold" fill="#E0E7FF" text-anchor="middle">data:</text>
+    <text x="156" y="170" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#38BDF8" text-anchor="middle">image</text>
+  </g>
+</svg>

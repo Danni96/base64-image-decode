@@ -1,0 +1,156 @@
+{
+  "name": "base64-image-decode",
+  "displayName": "Base64 Image Decode & Preview",
+  "description": "Decodifica y previsualiza imágenes en Base64 (con o sin prefijo data:image) en Hover, CodeLens y Visor Interactivo con Zoom, Fondos, Playground y Exportación 100% offline.",
+  "version": "1.0.0",
+  "publisher": "Danni96",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Danni96/base64-image-decode.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other",
+    "Debuggers"
+  ],
+  "keywords": [
+    "base64",
+    "image",
+    "preview",
+    "decoder",
+    "viewer",
+    "data-uri",
+    "svg",
+    "png",
+    "jpeg",
+    "webp"
+  ],
+  "icon": "img/icon.png",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": "limited",
+      "description": "En espacios no confiables se restringe la previsualización automática de SVGs."
+    }
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "base64ImagePreview.openInspector",
+        "title": "Base64 Image: Abrir en Visor Interactivo",
+        "icon": "$(open-preview)"
+      },
+      {
+        "command": "base64ImagePreview.previewSelection",
+        "title": "Base64 Image: Decodificar y Previsualizar Selección",
+        "icon": "$(eye)"
+      },
+      {
+        "command": "base64ImagePreview.openPlayground",
+        "title": "Base64 Image: Abrir Playground (Pegar / Decodificar Base64)",
+        "icon": "$(symbol-color)"
+      },
+      {
+        "command": "base64ImagePreview.saveImage",
+        "title": "Base64 Image: Guardar Imagen Decodificada en Disco",
+        "icon": "$(save)"
+      },
+      {
+        "command": "base64ImagePreview.copyDataUri",
+        "title": "Base64 Image: Copiar como Data URI (data:image/...)",
+        "icon": "$(clippy)"
+      },
+      {
+        "command": "base64ImagePreview.copyRawBase64",
+        "title": "Base64 Image: Copiar Payload Base64 Crudo",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "base64ImagePreview.encodeFileToBase64",
+        "title": "Base64 Image: Convertir Archivo de Imagen a Base64",
+        "icon": "$(file-media)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "base64ImagePreview.previewSelection",
+          "group": "navigation"
+        },
+        {
+          "command": "base64ImagePreview.openPlayground",
+          "group": "navigation"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "base64ImagePreview.openPlayground",
+          "group": "navigation"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "base64ImagePreview.encodeFileToBase64",
+          "when": "resourceExtname =~ /\\.(png|jpg|jpeg|gif|webp|svg|bmp|ico)$/i",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "base64ImagePreview.previewSelection",
+        "key": "ctrl+alt+b",
+        "mac": "cmd+alt+b",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "base64ImagePreview.openPlayground",
+        "key": "ctrl+alt+p",
+        "mac": "cmd+alt+p"
+      }
+    ],
+    "configuration": {
+      "title": "Base64 Image Decoder & Preview",
+      "properties": {
+        "base64ImagePreview.enableHover": {
+          "type": "boolean",
+          "default": true,
+          "description": "Habilita la previsualización rápida de imágenes en Base64 al pasar el cursor (Hover)."
+        },
+        "base64ImagePreview.enableCodeLens": {
+          "type": "boolean",
+          "default": true,
+          "description": "Habilita las acciones rápidas de CodeLens sobre cadenas Base64 detectadas."
+        },
+        "base64ImagePreview.enableGutterHighlight": {
+          "type": "boolean",
+          "default": true,
+          "description": "Habilita indicadores visuales en el margen/línea de cadenas Base64 de imagen."
+        },
+        "base64ImagePreview.maxBase64Length": {
+          "type": "number",
+          "default": 15728640,
+          "description": "Longitud máxima permitida (en caracteres) para analizar y decodificar cadenas Base64."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "node ./out/test/runTests.js",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}

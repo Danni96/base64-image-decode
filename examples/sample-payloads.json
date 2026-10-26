@@ -1,0 +1,14 @@
+{
+  "_instructions": "Abre este archivo en VS Code y pasa el cursor (Hover) sobre cualquiera de las cadenas Base64 o usa los botones de CodeLens que aparecen encima de cada propiedad para previsualizar, copiar o guardar la imagen.",
+  "samples": {
+    "rawPngIcon": "iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAAAXNSR0IArs4c6QAAADdJREFUKFNjZGBg+M+ABzDgk2B48eIFsQpAikB8XApwKcR2IboCnApBikB8ZBW4FOJSiM0gAJsKOxX5tD+rAAAAAElFTkSuQmCC",
+    "dataUriPngIcon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==",
+    "rawGifGraphic": "R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7",
+    "rawWebpImage": "UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoBAAEAAwA0JaQAA3AA/vuUAAA=",
+    "rawSvgBadge": "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMjAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCAyMjAgNDAiPjxyZWN0IHdpZHRoPSIyMjAiIGhlaWdodD0iNDAiIHJ4PSI4IiBmaWxsPSIjNGY0NmU1Ii8+PHRleHQgeD0iMTEwIiB5PSIyNSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZmZmZmZmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5WUyBDb2RlIEJhc2U2NCBSZWFkeTwvdGV4dD48L3N2Zz4="
+  },
+  "falsePositiveChecks": {
+    "description": "Este token JWT NO debe activar ni Hover ni CodeLens de imagen.",
+    "sampleJwtToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.dozjgNryP4J3jVmNHl0w5N_XgL0n3I9PlFUP0THsR8U"
+  }
+}

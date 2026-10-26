@@ -1,0 +1,6 @@
+node_modules/
+out/
+docs/
+.vscode-test/
+*.vsix
+ANALISIS_EXTENSION_VSCODE_BASE64.md
